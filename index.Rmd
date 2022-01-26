@@ -1,7 +1,7 @@
 ---
-title: "Discharge Data Example"
-author: "Matthew Ross"
-date: "1/24/2022"
+title: "Discharge Data"
+author: "Austin P. Hopkins (The Dirt Doctor)"
+date: "`r format(Sys.time(), '%a %d, %b')`"
 output:
   html_document:
     toc: true
@@ -15,6 +15,7 @@ library(tidyverse)
 library(dataRetrieval)
 library(dygraphs)
 library(xts)
+library(revealjs)
 ```
 
 
@@ -84,6 +85,9 @@ dygraph(q_xts) %>%
 # Assignment. 
 
 
+
+
+
 This assignment will be primarily about demonstrating some expertice in using
 RMarkdown, since we will be using Rmds as the primary form of homework and 
 assignments. With that in mind, your assignment for this homework is to:
@@ -115,12 +119,22 @@ todays date, not just a static date you enter.
 `revealjs` package. Add link to your original report-style document. 
 
 
-
+# Answer to Assignment
 
 ## DyGraph example. 
+```{r}
+q_xts <- xts(q$q, order.by = q$Date)
+
+
+dygraph(q_xts) %>%
+  dyAxis("y", label = "Discharge (cfs)")%>%
+  dyOptions(drawPoints=TRUE, pointSize=2)
+```
+
 
 
 ## Poudre Paragraph
+The Poudre river is a major river that flows near Fort Collins, Colorado. The river has a mantained [trail](https://poudretrail.org/) that spans 21 miles along its course. However the trail is currently **CLOSED** due to some typical [contruction](https://kdvr.com/news/local/greeley-poudre-river-trail-closed-construction/). Visitors are welcome to walk, ride, float and fish in and near the river. In order to fish you are **REQUIRED** to have a fishing license. You can purchase a fishing license at this link [here](https://www.cpwshop.com/licensing.page?e4q=f0be01b1-db43-4109-a918-85a9490b8a9e&e4p=32c95469-909d-4f01-b9b1-2c908f9f7535&e4ts=1643231594&e4c=aspira&e4e=snasoco01&e4rt=Safetynet&e4h=464ebb52658009e72be771ccaa50f54e). Be on the lookout for the *Arsapnia arapahoe* also known as the arapahoe snowfly as this insect is considered to be endangered. 
 
 Sys.which("make")
 ## "C:\\rtools40\\usr\\bin\\make.exe"
