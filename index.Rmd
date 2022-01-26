@@ -122,5 +122,9 @@ todays date, not just a static date you enter.
 
 ## Poudre Paragraph
 
+Sys.which("make")
+## "C:\\rtools40\\usr\\bin\\make.exe"
+install.packages("jsonlite", type = "source")
 
+Sys.which("make")
 
